@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ransomware Awareness</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #f8fafc;
+      overflow: hidden;
+    }
+
+    /* Network background */
+    .network {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(56,189,248,0.15), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(56,189,248,0.12), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(56,189,248,0.08), transparent 40%);
+      animation: float 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      from { transform: scale(1); }
+      to   { transform: scale(1.05); }
+    }
+
+    /* Glow ring */
+    .glow-ring {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 60%);
+      filter: blur(60px);
+      animation: pulse 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(1); opacity: 0.7; }
+      50%     { transform: scale(1.1); opacity: 1; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+    }
+
+    .hero {
+      max-width: 800px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      animation: enter 1.2s ease forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    @keyframes enter {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.12);
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(56,189,248,0.3);
+      box-shadow: 0 0 10px rgba(56,189,248,0.4);
+      animation: fade 1.5s ease forwards;
+    }
+
+    h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      animation: glowText 4s ease-in-out infinite;
+    }
+
+    @keyframes glowText {
+      0%,100% {
+        text-shadow:
+          0 0 10px rgba(56,189,248,0.4),
+          0 0 30px rgba(56,189,248,0.2);
+      }
+      50% {
+        text-shadow:
+          0 0 20px rgba(56,189,248,0.8),
+          0 0 50px rgba(56,189,248,0.4);
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #cbd5f5;
+      margin-bottom: 35px;
+      animation: fadeUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      padding: 14px 28px;
+      background: #38bdf8;
+      color: #020617;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 
+        0 0 20px rgba(56,189,248,0.5),
+        0 0 40px rgba(56,189,248,0.3);
+      animation: floatBtn 3s ease-in-out infinite;
+    }
+
+    @keyframes floatBtn {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-6px); }
+    }
+
+    .btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 
+        0 0 30px rgba(56,189,248,0.8),
+        0 0 60px rgba(56,189,248,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="network"></div>
+  <div class="glow-ring"></div>
+
+  <div class="container">
+    <div class="hero">
+      <div class="badge">Cybersecurity Awareness</div>
+      <h1>Ransomware Awareness</h1>
+      <p>
+        Ransomware is a growing cyber threat that encrypts data and
+        demands payment for access. Learn how to recognize attacks,
+        protect your systems, and keep your data safe.
+      </p>
+      <button class="btn"><a href="/major project /project3.html">Learn More</a></button>
+    </div>
+  </div>
+
+</body>
+</html>
