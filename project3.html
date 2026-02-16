@@ -2,169 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ransomware Awareness | SOC</title>
+<title>Ransomware Awareness | Security Operations Center</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:radial-gradient(circle at top,#061a2d,#000);
-color:#e6f7ff;
-overflow-x:hidden;
-}
-body::before{
-content:"";
-position:fixed;inset:0;
-background:
-linear-gradient(transparent 96%,rgba(0,255,255,.04) 97%),
-linear-gradient(90deg,transparent 96%,rgba(0,255,255,.04) 97%);
-background-size:50px 50px;
-animation:gridMove 40s linear infinite;
-pointer-events:none;
-}
-@keyframes gridMove{to{background-position:500px 500px}}
 
-nav{
-display:flex;justify-content:space-between;
-padding:15px 40px;
-background:rgba(0,0,0,.6);
-border-bottom:1px solid rgba(0,255,255,.2);
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:#e6f7ff;
+  background:radial-gradient(circle at top,#061a2d,#000);
+  overflow-x:hidden;
 }
-nav .logo{font-family:Orbitron;color:#00ffff}
-nav a{color:#b5f6ff;margin-left:20px;text-decoration:none}
+
+/* Grid */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(transparent 96%,rgba(0,255,255,.04) 97%),
+    linear-gradient(90deg,transparent 96%,rgba(0,255,255,.04) 97%);
+  background-size:50px 50px;
+  animation:gridMove 40s linear infinite;
+  pointer-events:none;
+}
+@keyframes gridMove{
+  to{background-position:500px 500px,500px 500px}
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,.6);
+  border-bottom:1px solid rgba(0,255,255,.2);
+  position:sticky;
+  top:0;
+}
+.logo{
+  font-family:'Orbitron';
+  color:#00ffff;
+  letter-spacing:2px;
+}
+nav a{
+  color:#b5f6ff;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:.9rem;
+}
 nav a:hover{color:#00ffff}
 
+/* HERO */
 header{
-  margin-top: 20%;
-  text-align:center;padding:80px 20px}
-h1{
-font-family:Orbitron;
-font-size:3.2rem;
-color:#00ffff;
-overflow:hidden;
-border-right:2px solid #00ffff;
-white-space:nowrap;
-width:0;
-animation:typing 4s steps(30,end) forwards,blink .8s infinite,glow 3s ease-in-out infinite alternate;
+  margin-top: 30%;
+  text-align:center;
+  padding:80px 20px 40px;
 }
-@keyframes typing{to{width:100%}}
-@keyframes blink{50%{border-color:transparent}}
-@keyframes glow{
-to{text-shadow:0 0 20px #00ffff,0 0 60px rgba(0,255,255,.7)}
+header h1{
+  font-family:'Orbitron';
+  font-size:3rem;
+  color:#00ffff;
+  text-shadow:0 0 25px rgba(0,255,255,.8);
 }
 header p{
-max-width:700px;margin:auto;
-opacity:0;
-animation:fadeUp 1.5s forwards .5s;
-}
-@keyframes fadeUp{
-to{opacity:.85;transform:translateY(0)}
+  max-width:700px;
+  margin:auto;
+  opacity:.85;
 }
 
+/* STATS */
 .stats{
-max-width:1000px;margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;padding:20px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 .stat{
-  margin-top: 40%;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(0,255,255,.2);
-padding:20px;border-radius:12px;
-text-align:center;
-animation:pulse 5s infinite;
+  margin-top: 30%;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(0,255,255,.2);
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 0 25px rgba(0,255,255,.3);
 }
-@keyframes pulse{
-50%{box-shadow:0 0 30px rgba(0,255,255,.6)}
+.stat h3{
+  font-family:'Orbitron';
+  color:#00ffff;
+  margin:0;
 }
-.stat h3{color:#00ffff;font-family:Orbitron}
 
+/* SECTIONS */
 section{
-max-width:1200px;margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;padding:40px 20px;
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px 70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 .card{
-  margin-top: 40%;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(0,255,255,.2);
-border-radius:14px;
-padding:25px;
-box-shadow:0 0 20px rgba(0,255,255,.15);
-opacity:0;
-animation:cardIn 1s forwards;
-}
-.card:nth-child(1){animation-delay:.2s}
-.card:nth-child(2){animation-delay:.4s}
-.card:nth-child(3){animation-delay:.6s}
-.card:nth-child(4){animation-delay:.8s}
-.card:nth-child(5){animation-delay:1s}
-@keyframes cardIn{
-to{opacity:1;transform:translateY(0)}
+  margin-top: 30%;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+  border-radius:14px;
+  padding:25px;
+  border:1px solid rgba(0,255,255,.2);
+  box-shadow:0 0 25px rgba(0,255,255,.2);
+  transition:.3s;
 }
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 40px rgba(0,255,255,.6);
+  transform:translateY(-5px);
+  box-shadow:0 0 40px rgba(0,255,255,.5);
 }
 .card h2{
-font-family:Orbitron;
-color:#00ffff;
+  font-family:'Orbitron';
+  color:#00ffff;
+  margin-top:0;
 }
+.card ul{padding-left:18px}
 
-.glitch{
-position:relative;
-}
-.glitch::before,.glitch::after{
-content:attr(data-text);
-position:absolute;left:0;width:100%;
-}
-.glitch::before{color:#ff00ff;animation:glitch 2s infinite}
-.glitch::after{color:#00ff00;animation:glitch 1.5s infinite reverse}
-@keyframes glitch{
-20%{transform:translate(-2px,2px)}
-40%{transform:translate(2px,-2px)}
-60%{transform:translate(-2px,-2px)}
-}
-
+/* BUTTON */
 button{
-background:linear-gradient(135deg,#00ffff,#3cffc3);
-border:none;padding:12px 24px;
-border-radius:30px;
-font-family:Orbitron;
-box-shadow:0 0 15px rgba(0,255,255,.5);
-animation:float 3s infinite;
-}
-@keyframes float{
-50%{transform:translateY(-6px)}
+  background:linear-gradient(135deg,#00ffff,#3cffc3);
+  color:#000;
+  border:none;
+  padding:12px 24px;
+  border-radius:30px;
+  cursor:pointer;
+  font-family:'Orbitron';
+  box-shadow:0 0 20px rgba(0,255,255,.6);
 }
 button:hover{
-box-shadow:0 0 40px rgba(0,255,255,.9);
+  transform:scale(1.05);
+  box-shadow:0 0 35px rgba(0,255,255,.9);
 }
 
+.hidden{display:none}
+
+/* FOOTER */
 footer{
-  margin-top: 30%;
-text-align:center;
-padding:30px;
-border-top:1px solid rgba(0,255,255,.2);
-color:#8defff;
-background:rgba(0,0,0,.6);
+  margin-top: 20%;
+  text-align:center;
+  padding:25px;
+  border-top:1px solid rgba(0,255,255,.2);
+  font-size:.8rem;
+  color:#8defff;
+  background:rgba(0,0,0,.6);
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:768px){
-nav{flex-direction:column}
-h1{font-size:2.2rem}
-.stats{grid-template-columns:1fr 1fr}
-section{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-.stats{grid-template-columns:1fr}
+  nav{flex-direction:column;gap:10px}
+  header h1{font-size:2.2rem}
+  section{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -172,69 +171,94 @@ section{grid-template-columns:1fr}
 <body>
 
 <nav>
-<div class="logo">SECURITY OPERATIONS CENTER</div>
-<div>
-<a href="#">Dashboard</a>
-<a href="#">Threat Intel</a>
-<a href="#">Awareness</a>
-<a href="#">Reports</a>
-</div>
+  <div class="logo">SECURITY OPERATIONS CENTER</div>
+  <div>
+    <a href="#">Dashboard</a>
+    <a href="#">Threat Intel</a>
+    <a href="#">Awareness</a>
+    <a href="#">Reports</a>
+  </div>
 </nav>
 
 <header>
-<h1>Ransomware Awareness</h1>
-<p>Enterprise cyber defense interface simulating real SOC threat environments.</p>
+  <h1>Ransomware Awareness</h1>
+  <p>
+    Learn how ransomware attacks work, how they spread,
+    and how to protect yourself and your organization.
+  </p>
 </header>
 
 <div class="stats">
-<div class="stat"><h3>98%</h3><p>Phishing based attacks</p></div>
-<div class="stat"><h3>72%</h3><p>Repeat victims</p></div>
-<div class="stat"><h3>$3.4M</h3><p>Average ransom</p></div>
-<div class="stat"><h3>0%</h3><p>Pay rate recommended</p></div>
+  <div class="stat"><h3>98%</h3><p>Phishing-based attacks</p></div>
+  <div class="stat"><h3>72%</h3><p>Repeat victims</p></div>
+  <div class="stat"><h3>$3.4M</h3><p>Average ransom</p></div>
+  <div class="stat"><h3>0%</h3><p>Recommended to pay</p></div>
 </div>
 
 <section>
+
 <div class="card">
-<h2 class="glitch" data-text="Threat Overview">Threat Overview</h2>
-<p>Ransomware encrypts systems and extorts organizations for data access.</p>
+  <h2>What is Ransomware?</h2>
+  <p>
+    Ransomware is malicious software that locks or encrypts
+    your files and demands payment to restore access.
+  </p>
 </div>
 
 <div class="card">
-<h2 class="glitch" data-text="Attack Surface">Attack Surface</h2>
-<ul>
-<li>Email phishing</li>
-<li>RDP exploitation</li>
-<li>Malware updates</li>
-</ul>
+  <h2>How It Spreads</h2>
+  <ul>
+    <li>Phishing emails</li>
+    <li>Fake software downloads</li>
+    <li>Compromised websites</li>
+    <li>Remote desktop attacks</li>
+  </ul>
 </div>
 
 <div class="card">
-<h2 class="glitch" data-text="Indicators">Indicators</h2>
-<ul>
-<li>Encrypted files</li>
-<li>Ransom notes</li>
-<li>Suspicious traffic</li>
-</ul>
+  <h2>Warning Signs</h2>
+  <ul>
+    <li>Files suddenly encrypted</li>
+    <li>Unusual file extensions</li>
+    <li>Pop-up ransom notes</li>
+    <li>Slow or locked system</li>
+  </ul>
 </div>
 
 <div class="card">
-<h2 class="glitch" data-text="Mitigation">Mitigation</h2>
-<ul>
-<li>MFA</li>
-<li>Zero trust</li>
-<li>Immutable backups</li>
-</ul>
+  <h2>How to Protect Yourself</h2>
+  <ul>
+    <li>Use strong passwords</li>
+    <li>Enable multi-factor authentication</li>
+    <li>Keep software updated</li>
+    <li>Backup data regularly</li>
+  </ul>
 </div>
 
 <div class="card">
-<h2 class="glitch" data-text="Response">Response</h2>
-<button>Initiate Response</button>
+  <h2>What To Do If Infected</h2>
+  <button onclick="showTips()">Show Steps</button>
+  <div id="tips" class="hidden">
+    <ul>
+      <li>Disconnect from the network</li>
+      <li>Do not pay the ransom</li>
+      <li>Report to IT/security team</li>
+      <li>Restore from clean backup</li>
+    </ul>
+  </div>
 </div>
+
 </section>
 
 <footer>
-© 2026 SOC | Cyber Defense Platform
+© 2026 Security Operations Center | Ransomware Awareness Platform
 </footer>
+
+<script>
+function showTips(){
+  document.getElementById("tips").classList.toggle("hidden");
+}
+</script>
 
 </body>
 </html>
